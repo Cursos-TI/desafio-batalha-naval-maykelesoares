@@ -4,7 +4,7 @@
 
 int main() {
     // criar matriz 10x10 para representar o tabuleiro;
-    //definir 2 navios um na horizontal outro na vertical;
+    //definir 4 navios um na horizontal outro na vertical; 2 na diagonal
     //usar loops para posicionar os navios;
     //usar loop aninhado para inmprimir o tabuleiro;
 
@@ -12,23 +12,32 @@ int main() {
     //cria a matriz do tabuleiro;
     int tabuleiro[10][10] = {0};
     
-    //cria os vetores respectivos para os navios;
-    int navio1[3] = {3, 3, 3};
-    int navio2[3] = {3, 3, 3};
+    int navio1[3] = {3, 3, 3}; //cria o vetor do primeiro navio
+    int navio2[3] = {3, 3, 3}; //cria o vetor do segundo navio
+    int navio3[3] = {3, 3, 3}; //cria o vetor do terceiro navio
+    int navio4[3] = {3, 3, 3}; //cria o vetor do quarto navio
 
-    
-    int posicaoNavio1 = 3;
-    //loop para posicionar o navio1
-    for (int i = 0; i < 3; i++){
-        tabuleiro[posicaoNavio1][i] = navio1[i];
-    }
-        
-    int posicaoNavio2 = 3;
-    //loop para posicionar o navio2
-    for (int j = 0; j < 3; j++)
+
+    for (int i = 0; i < 3; i++) //insere o navio 1 na vertical na matriz tabuleiro
     {
-        tabuleiro[j][posicaoNavio2] = navio2[j];
+        tabuleiro[i][3] = navio1[i];
     }
+    
+    for (int i = 0; i < 3; i++) //insere o navio 2 na horizontal na matriz tabuleiro
+    {
+        tabuleiro[3][i] = navio2[i];
+    }
+    
+    for (int i = 0; i < 3; i++) //insere o navio 3 na diagonal esquerda na matriz tabuleiro
+    {
+        tabuleiro[i][i] = navio3[i];
+    }
+
+    for (int i = 0; i < 3; i++) //insere o navio 4 na diagonal direita na matriz tabuleiro
+    {
+        tabuleiro[9 - i][i] = navio4[i];
+    }
+    
     
     //loop aninhado para imprimir o tabuleiro;
     for (int i = 0; i < 10; i++)
@@ -40,10 +49,7 @@ int main() {
         printf("\n");
     }
 
-    // Nível Aventureiro - Expansão do Tabuleiro e Posicionamento Diagonal
-    // Sugestão: Expanda o tabuleiro para uma matriz 10x10.
-    // Sugestão: Posicione quatro navios no tabuleiro, incluindo dois na diagonal.
-    // Sugestão: Exiba o tabuleiro completo no console, mostrando 0 para posições vazias e 3 para posições ocupadas.
+
 
     // Nível Mestre - Habilidades Especiais com Matrizes
     // Sugestão: Crie matrizes para representar habilidades especiais como cone, cruz, e octaedro.
